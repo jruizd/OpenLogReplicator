@@ -318,15 +318,14 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "CON#") {
+                if (table->columns[column]->name == "CON#")
                     updateNumber32u(sysCCol->con, 0, column, table);
-                } else if (table->columns[column]->name == "INTCOL#") {
+                else if (table->columns[column]->name == "INTCOL#")
                     updateNumber16(sysCCol->intCol, 0, column, table);
-                } else if (table->columns[column]->name == "OBJ#") {
+                else if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCCol->obj, 0, column, table);
-                } else if (table->columns[column]->name == "SPARE1") {
+                else if (table->columns[column]->name == "SPARE1")
                     updateNumberXu(sysCCol->spare1, column, table);
-                }
             }
         }
 
@@ -353,13 +352,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "CON#") {
+                if (table->columns[column]->name == "CON#")
                     updateNumber32u(sysCDef->con, 0, column, table);
-                } else if (table->columns[column]->name == "OBJ#") {
+                else if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCDef->obj, 0, column, table);
-                } else if (table->columns[column]->name == "TYPE#") {
+                else if (table->columns[column]->name == "TYPE#")
                     updateNumber16u(sysCDef->type, 0, column, table);
-                }
             }
         }
 
@@ -387,33 +385,32 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCol->obj, 0, column, table);
-                } else if (table->columns[column]->name == "COL#") {
+                else if (table->columns[column]->name == "COL#")
                     updateNumber16(sysCol->col, 0, column, table);
-                } else if (table->columns[column]->name == "SEGCOL#") {
+                else if (table->columns[column]->name == "SEGCOL#")
                     updateNumber16(sysCol->segCol, 0, column, table);
-                } else if (table->columns[column]->name == "INTCOL#") {
+                else if (table->columns[column]->name == "INTCOL#")
                     updateNumber16(sysCol->intCol, 0, column, table);
-                } else if (table->columns[column]->name == "NAME") {
+                else if (table->columns[column]->name == "NAME")
                     updateString(sysCol->name, SYS_COL_NAME_LENGTH, column, table);
-                } else if (table->columns[column]->name == "TYPE#") {
+                else if (table->columns[column]->name == "TYPE#")
                     updateNumber16u(sysCol->type, 0, column, table);
-                } else if (table->columns[column]->name == "LENGTH") {
+                else if (table->columns[column]->name == "LENGTH")
                     updateNumber64u(sysCol->length, 0, column, table);
-                } else if (table->columns[column]->name == "PRECISION#") {
+                else if (table->columns[column]->name == "PRECISION#")
                     updateNumber64(sysCol->precision, -1, column, table);
-                } else if (table->columns[column]->name == "SCALE") {
+                else if (table->columns[column]->name == "SCALE")
                     updateNumber64(sysCol->scale, -1, column, table);
-                } else if (table->columns[column]->name == "CHARSETFORM") {
+                else if (table->columns[column]->name == "CHARSETFORM")
                     updateNumber64u(sysCol->charsetForm, 0, column, table);
-                } else if (table->columns[column]->name == "CHARSETID") {
+                else if (table->columns[column]->name == "CHARSETID")
                     updateNumber64u(sysCol->charsetId, 0, column, table);
-                } else if (table->columns[column]->name == "NULL$") {
+                else if (table->columns[column]->name == "NULL$")
                     updateNumber64(sysCol->null_, 0, column, table);
-                } else if (table->columns[column]->name == "PROPERTY") {
+                else if (table->columns[column]->name == "PROPERTY")
                     updateNumberXu(sysCol->property, column, table);
-                }
             }
         }
 
@@ -440,11 +437,10 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysDeferredStg->obj, 0, column, table);
-                } else if (table->columns[column]->name == "FLAGS_STG") {
+                else if (table->columns[column]->name == "FLAGS_STG")
                     updateNumberXu(sysDeferredStg->flagsStg, column, table);
-                }
             }
         }
 
@@ -471,13 +467,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "TABOBJ#") {
+                if (table->columns[column]->name == "TABOBJ#")
                     updateNumber32u(sysECol->tabObj, 0, column, table);
-                } else if (table->columns[column]->name == "COLNUM") {
+                else if (table->columns[column]->name == "COLNUM")
                     updateNumber16(sysECol->colNum, 0, column, table);
-                } else if (table->columns[column]->name == "GUARD_ID") {
+                else if (table->columns[column]->name == "GUARD_ID")
                     updateNumber16(sysECol->guardId, -1, column, table);
-                }
             }
         }
 
@@ -504,17 +499,16 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysLob->obj, 0, column, table);
-                } else if (table->columns[column]->name == "COL#") {
+                else if (table->columns[column]->name == "COL#")
                     updateNumber16(sysLob->col, 0, column, table);
-                } else if (table->columns[column]->name == "INTCOL#") {
+                else if (table->columns[column]->name == "INTCOL#")
                     updateNumber16(sysLob->intCol, 0, column, table);
-                } else if (table->columns[column]->name == "LOBJ#") {
+                else if (table->columns[column]->name == "LOBJ#")
                     updateNumber32u(sysLob->lObj, 0, column, table);
-                } else if (table->columns[column]->name == "TS#") {
+                else if (table->columns[column]->name == "TS#")
                     updateNumber32u(sysLob->ts, 0, column, table);
-                }
             }
         }
 
@@ -541,11 +535,10 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "PARTOBJ#") {
+                if (table->columns[column]->name == "PARTOBJ#")
                     updateNumber32u(sysLobCompPart->partObj, 0, column, table);
-                } else if (table->columns[column]->name == "LOBJ#") {
+                else if (table->columns[column]->name == "LOBJ#")
                     updateNumber32u(sysLobCompPart->lObj, 0, column, table);
-                }
             }
         }
 
@@ -572,13 +565,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "FRAGOBJ#") {
+                if (table->columns[column]->name == "FRAGOBJ#")
                     updateNumber32u(sysLobFrag->fragObj, 0, column, table);
-                } else if (table->columns[column]->name == "PARENTOBJ#") {
+                else if (table->columns[column]->name == "PARENTOBJ#")
                     updateNumber32u(sysLobFrag->parentObj, 0, column, table);
-                } else if (table->columns[column]->name == "TS#") {
+                else if (table->columns[column]->name == "TS#")
                     updateNumber32u(sysLobFrag->ts, 0, column, table);
-                }
             }
         }
 
@@ -605,19 +597,18 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OWNER#") {
+                if (table->columns[column]->name == "OWNER#")
                     updateNumber32u(sysObj->owner, 0, column, table);
-                } else if (table->columns[column]->name == "OBJ#") {
+                else if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysObj->obj, 0, column, table);
-                } else if (table->columns[column]->name == "DATAOBJ#") {
+                else if (table->columns[column]->name == "DATAOBJ#")
                     updateNumber32u(sysObj->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "NAME") {
+                else if (table->columns[column]->name == "NAME")
                     updateString(sysObj->name, SYS_OBJ_NAME_LENGTH, column, table);
-                } else if (table->columns[column]->name == "TYPE#") {
+                else if (table->columns[column]->name == "TYPE#")
                     updateNumber16u(sysObj->type, 0, column, table);
-                } else if (table->columns[column]->name == "FLAGS") {
+                else if (table->columns[column]->name == "FLAGS")
                     updateNumberXu(sysObj->flags, column, table);
-                }
             }
         }
 
@@ -633,7 +624,7 @@ namespace OpenLogReplicator {
             metadata->schema->dictSysTabDrop(sysTab2);
             delete sysTab2;
         }
-        sysTab = new SysTab(rowId, 0, 0, 0, 0, 0, 0, 0, 0);
+        sysTab = new SysTab(rowId, 0, 0, 0, 0, 0, 0, 0);
 
         uint64_t baseMax = builder->valuesMax >> 6;
         for (uint64_t base = 0; base <= baseMax; ++base) {
@@ -644,19 +635,16 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysTab->obj, 0, column, table);
-                } else if (table->columns[column]->name == "DATAOBJ#") {
+                else if (table->columns[column]->name == "DATAOBJ#")
                     updateNumber32u(sysTab->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "TS#") {
-                    updateNumber32u(sysTab->ts, 0, column, table);
-                } else if (table->columns[column]->name == "CLUCOLS") {
+                else if (table->columns[column]->name == "CLUCOLS")
                     updateNumber16(sysTab->cluCols, 0, column, table);
-                } else if (table->columns[column]->name == "FLAGS") {
+                else if (table->columns[column]->name == "FLAGS")
                     updateNumberXu(sysTab->flags, column, table);
-                } else if (table->columns[column]->name == "PROPERTY") {
+                else if (table->columns[column]->name == "PROPERTY")
                     updateNumberXu(sysTab->property, column, table);
-                }
             }
         }
 
@@ -683,13 +671,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysTabComPart->obj, 0, column, table);
-                } else if (table->columns[column]->name == "DATAOBJ#") {
+                else if (table->columns[column]->name == "DATAOBJ#")
                     updateNumber32u(sysTabComPart->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "BO#") {
+                else if (table->columns[column]->name == "BO#")
                     updateNumber32u(sysTabComPart->bo, 0, column, table);
-                }
             }
         }
 
@@ -716,13 +703,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysTabPart->obj, 0, column, table);
-                } else if (table->columns[column]->name == "DATAOBJ#") {
+                else if (table->columns[column]->name == "DATAOBJ#")
                     updateNumber32u(sysTabPart->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "BO#") {
+                else if (table->columns[column]->name == "BO#")
                     updateNumber32u(sysTabPart->bo, 0, column, table);
-                }
             }
         }
 
@@ -749,13 +735,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysTabSubPart->obj, 0, column, table);
-                } else if (table->columns[column]->name == "DATAOBJ#") {
+                else if (table->columns[column]->name == "DATAOBJ#")
                     updateNumber32u(sysTabSubPart->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "POBJ#") {
+                else if (table->columns[column]->name == "POBJ#")
                     updateNumber32u(sysTabSubPart->pObj, 0, column, table);
-                }
             }
         }
 
@@ -782,13 +767,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "TS#") {
+                if (table->columns[column]->name == "TS#")
                     updateNumber32u(sysTs->ts, 0, column, table);
-                } else if (table->columns[column]->name == "NAME") {
+                else if (table->columns[column]->name == "NAME")
                     updateString(sysTs->name, SYS_TS_NAME_LENGTH, column, table);
-                } else if (table->columns[column]->name == "BLOCKSIZE") {
+                else if (table->columns[column]->name == "BLOCKSIZE")
                     updateNumber32u(sysTs->blockSize, 0, column, table);
-                }
             }
         }
 
@@ -815,13 +799,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "USER#") {
+                if (table->columns[column]->name == "USER#")
                     updateNumber32u(sysUser->user, 0, column, table);
-                } else if (table->columns[column]->name == "NAME") {
+                else if (table->columns[column]->name == "NAME")
                     updateString(sysUser->name, SYS_USER_NAME_LENGTH, column, table);
-                } else if (table->columns[column]->name == "SPARE1") {
+                else if (table->columns[column]->name == "SPARE1")
                     updateNumberXu(sysUser->spare1, column, table);
-                }
             }
         }
 
@@ -919,15 +902,14 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "CON#") {
+                if (table->columns[column]->name == "CON#")
                     updateNumber32u(sysCCol->con, 0, column, table);
-                } else if (table->columns[column]->name == "INTCOL#") {
+                else if (table->columns[column]->name == "INTCOL#")
                     updateNumber16(sysCCol->intCol, 0, column, table);
-                } else if (table->columns[column]->name == "OBJ#") {
+                else if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCCol->obj, 0, column, table);
-                } else if (table->columns[column]->name == "SPARE1") {
+                else if (table->columns[column]->name == "SPARE1")
                     updateNumberXu(sysCCol->spare1, column, table);
-                }
             }
         }
 
@@ -956,13 +938,12 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "CON#") {
+                if (table->columns[column]->name == "CON#")
                     updateNumber32u(sysCDef->con, 0, column, table);
-                } else if (table->columns[column]->name == "OBJ#") {
+                else if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCDef->obj, 0, column, table);
-                } else if (table->columns[column]->name == "TYPE#") {
+                else if (table->columns[column]->name == "TYPE#")
                     updateNumber16u(sysCDef->type, 0, column, table);
-                }
             }
         }
 
@@ -992,33 +973,32 @@ namespace OpenLogReplicator {
                 if ((builder->valuesSet[base] & mask) == 0)
                     continue;
 
-                if (table->columns[column]->name == "OBJ#") {
+                if (table->columns[column]->name == "OBJ#")
                     updateNumber32u(sysCol->obj, 0, column, table);
-                } else if (table->columns[column]->name == "COL#") {
+                else if (table->columns[column]->name == "COL#")
                     updateNumber16(sysCol->col, 0, column, table);
-                } else if (table->columns[column]->name == "SEGCOL#") {
+                else if (table->columns[column]->name == "SEGCOL#")
                     updateNumber16(sysCol->segCol, 0, column, table);
-                } else if (table->columns[column]->name == "INTCOL#") {
+                else if (table->columns[column]->name == "INTCOL#")
                     updateNumber16(sysCol->intCol, 0, column, table);
-                } else if (table->columns[column]->name == "NAME") {
+                else if (table->columns[column]->name == "NAME")
                     updateString(sysCol->name, SYS_COL_NAME_LENGTH, column, table);
-                } else if (table->columns[column]->name == "TYPE#") {
+                else if (table->columns[column]->name == "TYPE#")
                     updateNumber16u(sysCol->type, 0, column, table);
-                } else if (table->columns[column]->name == "LENGTH") {
+                else if (table->columns[column]->name == "LENGTH")
                     updateNumber64u(sysCol->length, 0, column, table);
-                } else if (table->columns[column]->name == "PRECISION#") {
+                else if (table->columns[column]->name == "PRECISION#")
                     updateNumber64(sysCol->precision, -1, column, table);
-                } else if (table->columns[column]->name == "SCALE") {
+                else if (table->columns[column]->name == "SCALE")
                     updateNumber64(sysCol->scale, -1, column, table);
-                } else if (table->columns[column]->name == "CHARSETFORM") {
+                else if (table->columns[column]->name == "CHARSETFORM")
                     updateNumber64u(sysCol->charsetForm, 0, column, table);
-                } else if (table->columns[column]->name == "CHARSETID") {
+                else if (table->columns[column]->name == "CHARSETID")
                     updateNumber64u(sysCol->charsetId, 0, column, table);
-                } else if (table->columns[column]->name == "NULL$") {
+                else if (table->columns[column]->name == "NULL$")
                     updateNumber64(sysCol->null_, 0, column, table);
-                } else if (table->columns[column]->name == "PROPERTY") {
+                else if (table->columns[column]->name == "PROPERTY")
                     updateNumberXu(sysCol->property, column, table);
-                }
             }
         }
 
@@ -1251,7 +1231,7 @@ namespace OpenLogReplicator {
                 TRACE(TRACE2_SYSTEM, "SYSTEM: missing SYS.TAB$: (rowid: " + rowId.toString() + ") for update");
                 return;
             }
-            sysTab = new SysTab(rowId, 0, 0, 0, 0, 0, 0, 0, 0);
+            sysTab = new SysTab(rowId, 0, 0, 0, 0, 0, 0, 0);
         }
 
         uint64_t baseMax = builder->valuesMax >> 6;
@@ -1267,8 +1247,6 @@ namespace OpenLogReplicator {
                     updateNumber32u(sysTab->obj, 0, column, table);
                 } else if (table->columns[column]->name == "DATAOBJ#") {
                     updateNumber32u(sysTab->dataObj, 0, column, table);
-                } else if (table->columns[column]->name == "TS#") {
-                    updateNumber32u(sysTab->ts, 0, column, table);
                 } else if (table->columns[column]->name == "CLUCOLS") {
                     updateNumber16(sysTab->cluCols, 0, column, table);
                 } else if (table->columns[column]->name == "FLAGS") {
@@ -1811,8 +1789,8 @@ namespace OpenLogReplicator {
         if (!metadata->schema->touched)
             return;
 
-        std::list<std::string> msgsDropped;
-        std::list<std::string> msgsUpdated;
+        std::set<std::string> msgsDropped;
+        std::set<std::string> msgsUpdated;
         metadata->schema->scn = scn;
         metadata->schema->dropUnusedMetadata(metadata->users, msgsDropped);
 

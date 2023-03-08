@@ -40,20 +40,19 @@ along with OpenLogReplicator; see the file LICENSE;  If not see
 namespace OpenLogReplicator {
     class SysTab {
     public:
-        SysTab(typeRowId& newRowId, typeObj newObj, typeDataObj newDataObj, typeTs newTs, typeCol newCluCols, uint64_t newFlags1, uint64_t newFlags2,
-               uint64_t newProperty1, uint64_t newProperty2) :
+        SysTab(typeRowId& newRowId, typeObj newObj, typeDataObj newDataObj, typeCol newCluCols, uint64_t newFlags1, uint64_t newFlags2, uint64_t newProperty1,
+               uint64_t newProperty2) :
                 rowId(newRowId),
                 obj(newObj),
                 dataObj(newDataObj),
-                ts(newTs),
                 cluCols(newCluCols),
                 flags(newFlags1, newFlags2),
                 property(newProperty1, newProperty2) {
         }
 
         bool operator!=(const SysTab& other) const {
-            return (other.rowId != rowId) || (other.obj != obj) || (other.dataObj != dataObj) || (other.ts != ts) || (other.cluCols != cluCols) ||
-                   (other.flags != flags) || (other.property != property);
+            return (other.rowId != rowId) || (other.obj != obj) || (other.dataObj != dataObj) || (other.cluCols != cluCols) || (other.flags != flags) ||
+                   (other.property != property);
         }
 
         [[nodiscard]] bool isBinary() {
@@ -91,7 +90,6 @@ namespace OpenLogReplicator {
         typeRowId rowId;
         typeObj obj;
         typeDataObj dataObj;        // NULL
-        typeTs ts;
         typeCol cluCols;            // NULL
         typeIntX flags;
         typeIntX property;

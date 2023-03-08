@@ -145,7 +145,7 @@ namespace OpenLogReplicator {
                 column->type = SYS_COL_TYPE_BLOB;
         }
 
-        switch (column->type) {
+        switch(column->type) {
         case SYS_COL_TYPE_VARCHAR:
         case SYS_COL_TYPE_CHAR:
             parseString(data, length, column->charsetId, false);
@@ -159,11 +159,9 @@ namespace OpenLogReplicator {
 
         case SYS_COL_TYPE_BLOB:
             if (ctx->experimentalLobs) {
-                if (after && table != nullptr) {
-                    if (parseLob(lobCtx, data, length, 0, table->obj, false))
-                        columnRaw(column->name, reinterpret_cast<uint8_t*>(valueBuffer), valueLength);
-                    else
-                        columnUnknown(column->name, data, length);
+                if (after) {
+                    parseLob(lobCtx, data, length, after, table->dataObj, false);
+                    columnRaw(column->name, reinterpret_cast<uint8_t*>(valueBuffer), valueLength);
                 }
             } else {
                 columnUnknown(column->name, data, length);
@@ -172,11 +170,9 @@ namespace OpenLogReplicator {
 
         case SYS_COL_TYPE_CLOB:
             if (ctx->experimentalLobs) {
-                if (after && table != nullptr) {
-                    if (parseLob(lobCtx, data, length, column->charsetId, table->obj, true))
-                        columnString(column->name);
-                    else
-                        columnUnknown(column->name, data, length);
+                if (after) {
+                    parseLob(lobCtx, data, length, column->charsetId, table->dataObj, true);
+                    columnString(column->name);
                 }
             } else {
                 columnUnknown(column->name, data, length);

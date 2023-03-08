@@ -350,7 +350,7 @@ namespace OpenLogReplicator {
     }
 
     void Metadata::readCheckpoint(typeScn scn) {
-        std::list<std::string> msgs;
+        std::set<std::string> msgs;
         INFO("reading metadata for " << database << " for scn: " << scn);
         std::string ss;
 
@@ -452,7 +452,7 @@ namespace OpenLogReplicator {
 
     void Metadata::loadAdaptiveSchema() {
         std::string ss;
-        std::list<std::string> msgs;
+        std::set<std::string> msgs;
         std::string name("base-" + ctx->versionStr);
 
         INFO("reading adaptive schema from: " << name + ".json");
