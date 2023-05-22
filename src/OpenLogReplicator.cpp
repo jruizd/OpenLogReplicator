@@ -779,8 +779,7 @@ namespace OpenLogReplicator {
                     }
                 }
 #else
-                throw ConfigurationException(30001, "bad JSON, invalid 'type' value: " + std::string(formatType) +
-                                             ", expected: not 'kafka' since the code is not compiled");
+                throw ConfigurationException(30001, "bad JSON, invalid 'type' value: ?? expected: not 'kafka' since the code is not compiled");
 
 #endif /* LINK_LIBRARY_RDKAFKA */
             } else if (strcmp(writerType, "zeromq") == 0) {
